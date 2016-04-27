@@ -11,10 +11,11 @@
 <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <script src="js/jquery-1.11.1.min.js"></script>
-<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
 <!--scrolling-->
 <script type="text/javascript" src="js/move-top.js"></script>
 <script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/leancloud/av.min.js"></script>
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
 		$(".scroll").click(function(event){
@@ -30,7 +31,7 @@
 <div id="home" class="top-header">
 	<div class="container">
 		<div class="logo">
-			<h1><a href="index.html">Liyuntao</a></h1>
+			<h1><a href="index.html"></a></h1>
 		</div>
 		<div class="top-menu">
 			<span class="menu"><img src="images/nav-icon.png" alt=""/></span>
@@ -59,13 +60,13 @@
 		<div class="banner-info">
 			<h2>欢迎访问我的个人网站</h2>
 			<p>上不知天文，下不识地理，鄙人才疏学浅，稍稍会写一两行代码。<br>
-			刚好这些天产品经理提的需求不多，所以工作之余，搭建了自己的个人网站，作为自己的知识积累与生活记录。</p>
+			虽然工作占了很大部分时间，但是业余时间还是可以挤出来的，于是搭建了自己的个人网站，主要用来积累知识与记录生活。</p>
 			<p><h3>相关功能与模块正在开发中，敬请期待...</h3></p>
 			<a class="scroll" href="#blog">赞助</a>
 		</div>
 	</div>
 </div>
-<!--Service-->
+<!--reading-->
 <div id="reading" class="reading">
 	<div class="container">
 		<h3>书单推荐</h3>
@@ -139,9 +140,9 @@
 	<div class="clearfix"></div>
 </div>
 <!--gallery -->
-		<script src="js/jquery.chocolat.js"></script>
-		<!--light-box-files -->
-		<script type="text/javascript">
+<script src="js/jquery.chocolat.js"></script>
+<!--light-box-files -->
+<script type="text/javascript">
 		$(function() {
 			$('.moments-bottom a').Chocolat();
 		});
@@ -149,7 +150,7 @@
 <!--gallery js-->
 <div id="gallery" class="gallery">
 	<div class="container">
-		<h3>摄影作品</h3>
+		<h3>摄影作品（样例）</h3>
          <div class="gallery-info">
 				<div class="col-md-4 galry-grids moments-bottom">
 					<a class="b-link-stripe b-animate-go" href="images/img15.jpg">
@@ -249,23 +250,60 @@
 <div id="blog" class="blog">
 	<div class="container">
 		<h3>赞助</h3>
-		<div class="blog-grids">
-			<div class="col-md-4 blog-grid">
-				<img src="images/qrcode10.png" class="img-responsive" alt=""/>
-				<h4>赞助费：10元</h4>
-				<p>从来不会嫌弃</p>
+		
+		<ul class="nav nav-tabs" id="pay_tab">
+			<li class="active"><a href="#wechat" data-toggle="tab">微信支付</a></li>
+			<li><a href="#alipay" data-toggle="tab">支付宝</a></li>
+		</ul>
+		
+		<div class="tab-content">
+			<div class="tab-pane active blog-grids" id="wechat">
+				<div class="col-md-4 blog-grid">
+					<img src="images/qrcode10.png" class="img-responsive" alt=""/>
+					<h4>赞助费：10元</h4>
+					<p>从来不会嫌弃</p>
+				</div>
+				<div class="col-md-4 blog-grid">
+					<img src="images/qrcode20.png" class="img-responsive" alt=""/>
+					<h4>赞助费：20元</h4>
+					<p>赤裸裸的金钱赞助</p>
+				</div>
+				<div class="col-md-4 blog-grid">
+					<img src="images/qrcode32.png" class="img-responsive" alt=""/>
+					<h4>赞助费：32元</h4>
+					<p>一杯咖啡，真是极好的</p>
+				</div>
 			</div>
-			<div class="col-md-4 blog-grid">
-				<img src="images/qrcode20.png" class="img-responsive" alt=""/>
-				<h4>赞助费：20元</h4>
-				<p>赤裸裸的金钱赞助</p>
-			</div>
-			<div class="col-md-4 blog-grid">
-				<img src="images/qrcode32.png" class="img-responsive" alt=""/>
-				<h4>赞助费：32元</h4>
-				<p>一杯咖啡，真是极好的</p>
+			
+			<div class="tab-pane blog-grids" id="alipay">
+				<div class="col-md-4 blog-grid">
+					<img src="images/alicode10.jpg" class="img-responsive" alt=""/>
+					<h4>赞助费：10元</h4>
+					<p>从来不会嫌弃</p>
+				</div>
+				<div class="col-md-4 blog-grid">
+					<img src="images/alicode20.jpg" class="img-responsive" alt=""/>
+					<h4>赞助费：20元</h4>
+					<p>赤裸裸的金钱赞助</p>
+				</div>
+				<div class="col-md-4 blog-grid">
+					<img src="images/alicode32.jpg" class="img-responsive" alt=""/>
+					<h4>赞助费：32元</h4>
+					<p>一杯咖啡，真是极好的</p>
+				</div>
 			</div>
 		</div>
+		
+		<script>
+			$(function(){
+				$("#pay_tab a:last").tab('show');
+				$("#pay_tab a").click(function(e){
+					e.preventDefault()
+					$(this).tab('show');
+				});
+			});
+		</script>
+		
 	</div>
 </div>
 <div id="contact" class="contact">
@@ -274,11 +312,12 @@
 		<div class="touch-top">
 			<div class="col-md-8 touch-left">
 				<form>
-					<input type="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" />
-					<input type="text" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" />
-					<textarea onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}"></textarea>
-					<input type="submit" value="SUBMIT">
+					<input type="text" value="Name" id="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" />
+					<input type="text" value="Email" id="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" />
+					<textarea onfocus="this.value = '';" id="Message" onblur="if (this.value == '') {this.value = 'Message';}"></textarea>
+					<input type="submit" name="submit" value="提交">
 				</form>
+				<script type="text/javascript" src="js/contact.js"></script>
 			</div>
 			<div class="col-md-4 touch-right">
 					<div class="touch-right-top">
@@ -300,7 +339,7 @@
 </div>
 <div class="footer">
 	<div class="container">
-		<p>Copyrights © 2016 Li Yuntao All rights reserved | 上海市浦东新区祖冲之路2290号</p>
+		<p>Copyrights © 2015 Emplox. All rights reserved | Template by <a href="http://w3layouts.com/">W3layouts</a></p>
 		<div class="arrow">
 			<a class="scroll" href="#home"><img src="images/top.png" alt=""></a>
 		</div>
