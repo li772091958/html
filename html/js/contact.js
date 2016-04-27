@@ -1,6 +1,6 @@
 $("input[name='submit']").click(function(){
 	AV.initialize('PsLiU3e6sAFkoOnaBRS1BThk-gzGzoHsz', 'WQ2jeDbbVWlEnAJ3iWymS4Px');
-	var TestObject = AV.Object.extend('TestObject');
+	var TestObject = AV.Object.extend('Liyuntao_message');
 	var testObject = new TestObject();
 	var name = $("#Name").val();
 	var email = $("#Email").val();
