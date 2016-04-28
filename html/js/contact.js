@@ -8,7 +8,8 @@ $("input[name='submit']").click(function(){
 	testObject.save({
 		name : name,
 		email : email,
-		message : message
+		message : message,
+		returnCitySN : returnCitySN
 	},{
 		success: function(object) {
 			alert('留言成功，我会及时查看并予以回复！');
