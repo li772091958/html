@@ -9,7 +9,8 @@ $("input[name='submit']").click(function(){
 		name : name,
 		email : email,
 		message : message,
-		returnCitySN : returnCitySN
+		cip : returnCitySN.cip,
+		cname : returnCitySN.cname
 	},{
 		success: function(object) {
 			alert('留言成功，我会及时查看并予以回复！');
