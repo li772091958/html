@@ -4,10 +4,12 @@ var testObject = new TestObject();
 var date = new Date();
 var cip = returnCitySN.cip;
 var cname = returnCitySN.cname;
+var href = window.location.href;
 testObject.save({
 	date : date,
 	cip : cip,
-	cname : cname
+	cname : cname,
+	href : href
 },{
 	success: function(object) {
 		console.log('欢迎访问李云涛的个人网站！');
