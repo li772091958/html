@@ -254,6 +254,7 @@
 		<ul class="nav nav-tabs" id="pay_tab">
 			<li class="active"><a href="#wechat" data-toggle="tab">微信支付</a></li>
 			<li><a href="#alipay" data-toggle="tab">支付宝</a></li>
+			<li><a href="#redPackage" data-toggle="tab">领红包</a></li>
 		</ul>
 		
 		<div class="tab-content">
@@ -292,11 +293,19 @@
 					<p>一杯咖啡，真是极好的</p>
 				</div>
 			</div>
+			
+			<div class="tab-pane blog-grids" id="redPackage"><center>
+				<div class="col-md-push-12 blog-grid">
+					<img src="images/24903505850394487.jpg" class="img-responsive" alt=""/>
+					<h4>&nbsp;</h4>
+					<p>61225735</p>
+				</div></center>
+			</div>
 		</div>
 		
 		<script>
 			$(function(){
-				$("#pay_tab a:last").tab('show');
+				$("#pay_tab a:first").tab('show');
 				$("#pay_tab a").click(function(e){
 					e.preventDefault()
 					$(this).tab('show');
